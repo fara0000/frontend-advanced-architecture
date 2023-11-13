@@ -1,3 +1,3 @@
 import {hello} from "./test";
 
-hello();
+hello('Hello Fakhri');
