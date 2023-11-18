@@ -10,7 +10,7 @@
     // в какую спецификацию компилируем ts: для поддержки большинсво браузеров
     "target": "es5",
 
-    "jsx": "react",
+    "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
 
