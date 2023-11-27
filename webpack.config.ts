@@ -14,7 +14,6 @@ export default (env: EnvConfig) => {
     const isDev = mode === 'development';
     const PORT = env.port || 3000;
 
-    // где-то баг не добавляется новый билд
     const config: webpack.Configuration = buildWebpackConfig({
         mode,
         paths,
