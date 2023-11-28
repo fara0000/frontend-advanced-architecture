@@ -6,5 +6,7 @@ export const buildDevServer = (options: BuildOptions): DevServerConfiguration =>
         port: options.port,
         // автоматически открывает нашу страницу в браузере
         open: true,
+        // proxy everything from index.tsx
+        historyApiFallback: true
     }
 }
