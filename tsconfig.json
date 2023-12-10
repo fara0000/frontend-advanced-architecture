@@ -14,14 +14,19 @@
     "allowJs": true,
     "moduleResolution": "node",
 
-    // Для абсолютного импорта
+    // Для абсолютного импорта (exp: helpers/, app/)
     "baseUrl": ".",
+
+    // Все импорты будут идти только из папки src
+    "paths": {
+      "*": ["./src/*"]
+    },
 
     // instead of commonjs(require) allows to use import/export
     "esModuleInterop": true,
 
     // allows us to use import with * as
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true
   },
 
   // also for imports/exports - for successful compilation
