@@ -14,7 +14,7 @@
     "allowJs": true,
     "moduleResolution": "node",
 
-    // Для абсолютного импорта (exp: helpers/, app/)
+    // Для абсолютного импорта (exp: lib/, app/)
     "baseUrl": ".",
 
     // Все импорты будут идти только из папки src
