@@ -2,6 +2,12 @@ import webpack from 'webpack';
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import {BuildOptions} from "./types/config";
 
+/**
+ * Файл содержит все Loader'ы проекта
+ *
+ * !!! Важно: сохранять порядок лоудеров
+ */
+
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 
     // Если не испольуем тайпскрипт то нужен babel-loader

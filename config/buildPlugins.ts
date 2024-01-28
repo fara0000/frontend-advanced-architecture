@@ -3,6 +3,11 @@ import HTMLWebpackPlugin from "html-webpack-plugin";
 import {BuildOptions} from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
+/**
+ * Файл содержит все Плагины'ы проекта
+ *
+ */
+
 export function buildPlugins({paths}: BuildOptions): webpack.WebpackPluginInstance[] {
     return [
         new HTMLWebpackPlugin({

@@ -1,6 +1,11 @@
 import webpack from "webpack";
 import {BuildOptions} from "./types/config";
 
+/**
+ * Файл содержит все Resolver'ы проекта
+ *
+ */
+
 export function buildResolvers(options: BuildOptions): webpack.ResolveOptions {
     return {
         // расширение при импорте
