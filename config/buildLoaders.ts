@@ -41,7 +41,25 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         ],
     }
 
+    // only for SVG extensions
+    const svgLoader = {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+    }
+
+    // for png, jgp, jpeg, gif extensions (also can add fonts)
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    }
+
     return [
+        svgLoader,
+        fileLoader,
         typescriptLoader,
         cssLoader,
     ]

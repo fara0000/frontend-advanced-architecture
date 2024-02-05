@@ -22,6 +22,7 @@ export const classNames = (cls: string, mods: Mods = {}, additional: string[] = 
     ].join(' ')
 };
 
+
 // Пример вызова текущего метода
 // classNames('btn', { hovered: true, selectable: true, green: false}, ['withPadding, withDefaultBorderColor'])
 // при вызове с текущеми параметрами должны получить  ->  'btn hovered selectable withPadding withDefaultBorderColor'
