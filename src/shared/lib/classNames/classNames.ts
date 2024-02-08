@@ -17,7 +17,7 @@ export const classNames = (cls: string, mods: Mods = {}, additional: string[] = 
         ...additional.filter(Boolean),
         // для фильтрации
         ...Object.entries(mods)
-            .filter(([className, value]) => Boolean(value))
+            .filter(([_, value]) => Boolean(value))
             .map(([className]) => className)
     ].join(' ')
 };
