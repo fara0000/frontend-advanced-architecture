@@ -10,4 +10,4 @@ export {
     AppLinkTheme,
     LangSwitcher,
     ThemeSwitcher,
-}
+};

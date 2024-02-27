@@ -11,17 +11,14 @@ type Mods = Record<string, boolean | string>
  * @returns string
  */
 
-export const classNames = (cls: string, mods: Mods = {}, additional: string[] = []): string => {
-    return [
-        cls,
-        ...additional.filter(Boolean),
-        // для фильтрации
-        ...Object.entries(mods)
-            .filter(([_, value]) => Boolean(value))
-            .map(([className]) => className)
-    ].join(' ')
-};
-
+export const classNames = (cls: string, mods: Mods = {}, additional: string[] = []): string => [
+    cls,
+    ...additional.filter(Boolean),
+    // для фильтрации
+    ...Object.entries(mods)
+        .filter(([_, value]) => Boolean(value))
+        .map(([className]) => className),
+].join(' ');
 
 // Пример вызова текущего метода
 // classNames('btn', { hovered: true, selectable: true, green: false}, ['withPadding, withDefaultBorderColor'])

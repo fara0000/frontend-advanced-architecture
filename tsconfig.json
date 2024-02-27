@@ -34,5 +34,6 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": ["./__mocks__/**/*.ts", "./src/**/*.tsx", "./src/**/*.ts", "./.eslintrc.js", "./.storybook/preview.tsx"]
 }

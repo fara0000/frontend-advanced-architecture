@@ -1,14 +1,14 @@
 import webpack from 'webpack';
-import HTMLWebpackPlugin from "html-webpack-plugin";
-import {BuildOptions} from "./types/config";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import HTMLWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { BuildOptions } from './types/config';
 
 /**
  * Файл содержит все Плагины'ы проекта
  *
  */
 
-export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
     return [
         // js file into html
         new HTMLWebpackPlugin({
@@ -19,7 +19,7 @@ export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPlugi
         // extract css file for each js file (when needed)
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash:8].css',
-            chunkFilename: 'css/[name].[contenthash:8].css'
+            chunkFilename: 'css/[name].[contenthash:8].css',
         }),
         // DefinePlugin - for global variables
         new webpack.DefinePlugin({
@@ -27,5 +27,5 @@ export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPlugi
         }),
         // HotModuleReplacementPlugin - live refresh
         new webpack.HotModuleReplacementPlugin(),
-    ]
+    ];
 }

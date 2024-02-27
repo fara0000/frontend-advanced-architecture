@@ -1,7 +1,7 @@
-import webpack from "webpack";
-import {buildWebpackConfig} from "./config/buildWebpackConfig";
-import path from "path";
-import {BuildPaths, EnvConfig} from "./config/types/config";
+import webpack from 'webpack';
+import path from 'path';
+import { buildWebpackConfig } from './config/buildWebpackConfig';
+import { BuildPaths, EnvConfig } from './config/types/config';
 
 // делается для того чтобы пробросить переменное окружение
 export default (env: EnvConfig) => {
@@ -10,8 +10,8 @@ export default (env: EnvConfig) => {
         entry: path.resolve(__dirname, 'src', 'index.tsx'),
         build: path.resolve(__dirname, 'build'),
         html: path.resolve(__dirname, 'public', 'index.html'),
-        src: path.resolve(__dirname, 'src')
-    }
+        src: path.resolve(__dirname, 'src'),
+    };
     const isDev = mode === 'development';
     const PORT = env.port || 3000;
 
@@ -19,8 +19,8 @@ export default (env: EnvConfig) => {
         mode,
         paths,
         isDev,
-        port: PORT
-    })
+        port: PORT,
+    });
 
     return config;
 };
