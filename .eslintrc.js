@@ -6,6 +6,7 @@ module.exports = {
     extends: [
         'plugin:react/recommended',
         'airbnb',
+        'plugin:i18next/recommended',
     ],
     // Define overrides if you want to exclude specific files
     overrides: [
@@ -29,6 +30,8 @@ module.exports = {
     },
     plugins: [
         'react',
+        '@typescript-eslint',
+        'i18next',
     ],
     rules: {
         // отступы
@@ -51,5 +54,6 @@ module.exports = {
         'react/jsx-props-no-spreading': 'off',
         'react/react-in-jsx-scope': 'warn',
         'react/button-has-type': 'off',
+        'i18next/no-literal-string': ['error', { markupOnly: true }],
     },
 };
