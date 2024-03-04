@@ -38,6 +38,8 @@ export default {
     testMatch: [
         // Есть различие зависимости от ОС
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
+        // для того чтобы можно было использовать __tests__
+        // '<rootDir>/__tests__/**/*.[jt]s?(x)',
     ],
 
     // A list of paths to directories that Jest should use to search for files in

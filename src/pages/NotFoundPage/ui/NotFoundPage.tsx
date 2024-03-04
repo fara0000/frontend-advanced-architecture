@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const NotFoundPage: FC<Props> = ({ className }) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('error');
 
     return (
         <div className={classNames(styles.container, {}, [className])}>
