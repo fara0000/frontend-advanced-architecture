@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 
 /**
@@ -27,5 +28,9 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
         }),
         // HotModuleReplacementPlugin - live refresh
         new webpack.HotModuleReplacementPlugin(),
+        // Bundle analyzing instrument, if you want to open: http://localhost:8888
+        new BundleAnalyzerPlugin({
+            openAnalyzer: false,
+        }),
     ];
 }
