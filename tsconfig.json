@@ -35,5 +35,5 @@
       "module": "CommonJS"
     }
   },
-  "include": ["./__mocks__/**/*.ts", "./src/**/*.tsx", "./src/**/*.ts", "./.eslintrc.js", "./.storybook/preview.tsx"]
+  "include": ["./src/**/*", "./__mocks__/**/*.ts", "./src/**/*.tsx", "./src/**/*.ts", "./.eslintrc.js", "./config/jest/setupTests.ts","./.storybook/preview.tsx"]
 }
