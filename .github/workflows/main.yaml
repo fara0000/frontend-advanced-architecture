@@ -2,16 +2,16 @@ name: Linting, Testing, Building
 # В каких моментах должны запускаться пайплайны (пуш, пр)
 on:
   push:
-    branches: [master]
-  pull_requests:
-    branches: [master]
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 jobs:
   pipeline:
     # OS
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [17.x]
+        node-version: [ 17.x ]
 
     # Шаги/этапы пайплайна
     steps:
@@ -21,7 +21,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-
       # Дальше запускаем сами этапы и скрипты
       - name: install dependencies
         run: npm install
