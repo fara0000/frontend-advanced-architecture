@@ -10,7 +10,7 @@ import { BuildOptions } from './types/config';
  */
 
 export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
-    return [
+    const plugins = [
         // js file into html
         new HTMLWebpackPlugin({
             template: paths.html,
@@ -26,11 +26,19 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
         new webpack.DefinePlugin({
             __IS_DEV__: isDev,
         }),
-        // HotModuleReplacementPlugin - live refresh
-        new webpack.HotModuleReplacementPlugin(),
-        // Bundle analyzing instrument, if you want to open: http://localhost:8888
-        new BundleAnalyzerPlugin({
-            openAnalyzer: false,
-        }),
     ];
+
+    // Будут только при dev сборке
+    if (isDev) {
+        plugins.push(
+            // HotModuleReplacementPlugin - live refresh
+            new webpack.HotModuleReplacementPlugin(),
+            // Bundle analyzing instrument, if you want to open: http://localhost:8888
+            new BundleAnalyzerPlugin({
+                openAnalyzer: false,
+            }),
+        );
+    }
+
+    return plugins;
 }
