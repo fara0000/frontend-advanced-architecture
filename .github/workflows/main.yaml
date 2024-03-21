@@ -2,9 +2,9 @@ name: Linting, Testing, Building
 # В каких моментах должны запускаться пайплайны (пуш, пр)
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 jobs:
   pipeline:
     # OS
