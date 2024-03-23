@@ -5,6 +5,14 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { AppLinkTheme } from 'shared/ui';
 import { AppLink } from './AppLink';
 
+// Sidebar
+// Button
+// AppLink from Header to Sidebar
+// LangSwitcher
+// icons from figma when collapsed
+// renderForRouter, renderwithProvider for tests
+// reg cli (28m)
+
 export default {
     title: 'shared/AppLink',
     component: AppLink,

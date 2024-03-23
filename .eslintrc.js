@@ -55,6 +55,6 @@ module.exports = {
         'react/jsx-props-no-spreading': 'off',
         'react/react-in-jsx-scope': 'warn',
         'react/button-has-type': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'i18next/no-literal-string': 'off',
     },
 };

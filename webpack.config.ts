@@ -1,6 +1,6 @@
 import webpack from 'webpack';
 import path from 'path';
-import { buildWebpackConfig } from './config/buildWebpackConfig';
+import { buildWebpackConfig } from './config/build/buildWebpackConfig';
 import { BuildPaths, EnvConfig } from './config/types/config';
 
 // делается для того чтобы пробросить переменное окружение

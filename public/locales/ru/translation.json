@@ -1,4 +1,7 @@
 {
   "TRANSLATE": "Перевод",
-  "CHANGE_LANGUAGE": "Поменять Язык"
+  "CHANGE_LANGUAGE": "Поменять Язык",
+  "LANGUAGE_SHORT": "RU",
+  "MAIN": "Главная",
+  "ABOUT": "О сайте"
 }

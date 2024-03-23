@@ -8,10 +8,6 @@ import { Navbar, Sidebar } from 'widgets';
 const App = () => {
     const { theme } = useTheme();
 
-    useEffect(() => {
-        throw Error;
-    }, []);
-
     return (
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">
