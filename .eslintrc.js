@@ -33,6 +33,7 @@ module.exports = {
         'react',
         '@typescript-eslint',
         'i18next',
+        'react-hooks',
     ],
     rules: {
         // отступы
@@ -56,5 +57,9 @@ module.exports = {
         'react/react-in-jsx-scope': 'warn',
         'react/button-has-type': 'off',
         'i18next/no-literal-string': 'off',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
+        'jsx-a11y/click-events-have-key-events': 'warn',
+        'jsx-a11y/no-static-element-interactions': 'warn',
     },
 };

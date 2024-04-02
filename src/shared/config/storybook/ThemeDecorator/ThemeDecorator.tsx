@@ -1,4 +1,4 @@
-import { Theme } from 'app/providers/ThemeProvider';
+import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
 import { Story } from '@storybook/react';
 
 /**
@@ -7,7 +7,9 @@ import { Story } from '@storybook/react';
  */
 export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) => (
     // Можно было и через функцию сделать как в StyleDecorator разницы нет
-    <div className={`app ${theme}`}>
-        <StoryComponent />
-    </div>
+    <ThemeProvider initialTheme={theme}>
+        <div className={`app ${theme}`}>
+            <StoryComponent />
+        </div>
+    </ThemeProvider>
 );
