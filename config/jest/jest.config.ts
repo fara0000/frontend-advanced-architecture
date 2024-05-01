@@ -61,4 +61,9 @@ export default {
 
     // чтобы не было проблем с dom при тестах иначе функция render не работала
     testEnvironment: 'jest-environment-jsdom',
+
+    // set of global variables that need to be available in all test environmet
+    globals: {
+        __IS_DEV__: true,
+    },
 };

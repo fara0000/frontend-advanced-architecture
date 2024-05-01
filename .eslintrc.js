@@ -49,6 +49,7 @@ module.exports = {
         'no-unused-vars': 'warn',
         'max-len': 'off',
         'no-undef': 'off',
+        'no-param-reassign': 'off',
         'react/require-default-props': 'off',
         'no-shadow': 'off',
         'no-underscore-dangle': 'off',
