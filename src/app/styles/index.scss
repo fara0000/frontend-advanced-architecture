@@ -4,7 +4,8 @@
 @import "./themes/dark";
 
 // для того чтобы в порталах тоже были эти стили, так можно и в .root/.app добавлять
-body {
+.app,
+.app_modal {
     font: var(--font-m);
     color: var(--primary-color);
 }

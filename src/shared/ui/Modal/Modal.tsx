@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
+import { useTheme } from 'app/providers/ThemeProvider';
 import styles from './Modal.module.scss';
 
 interface Props {
@@ -26,6 +27,7 @@ export const Modal: FC<Props> = ({
         [styles.opened]: isOpen, // анимация при открытие
         [styles.isClosing]: isClosing, // анимация при закрытие
     };
+    const { theme } = useTheme();
 
     const closeModal = () => {
         if (onClose) {
@@ -62,7 +64,7 @@ export const Modal: FC<Props> = ({
 
     return (
         <Portal>
-            <div className={classNames(styles.Modal, mods, [className])}>
+            <div className={classNames(styles.Modal, mods, [className, theme, 'app_modal'])}>
                 <div className={styles.overlay} onClick={closeModal}>
                     <div className={styles.content} onClick={onContentClick}>
                         {children}
