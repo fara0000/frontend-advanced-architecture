@@ -3,7 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCounterValue } from 'entities/Counter/model/selectors/getCounterValue/getCounterValue';
-import style from './Counter.module.scss';
+// import style from './Counter.module.scss';
 import { counterActions } from '../model/slice/counterSlice';
 
 interface Props {
@@ -23,7 +23,7 @@ export const Counter: FC<Props> = ({ className }: Props) => {
     };
 
     return (
-        <div className={classNames(style.Container, {}, [className])}>
+        <div className={classNames('', {}, [className])}>
             <h1>
                 value =
                 {' '}
