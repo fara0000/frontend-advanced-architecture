@@ -11,6 +11,9 @@ interface Props {
     children?: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
+    // чтобы модалка монтировалась тогда когда мы ее открываем а не в самом начале как обычно
+    // так же это поможет оптимизировать бандл то есть в банл моддалка попадет только тогда когда мы ее откроем
+    lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
@@ -20,8 +23,10 @@ export const Modal: FC<Props> = ({
     isOpen,
     onClose,
     children,
+    lazy,
 }) => {
     const [isClosing, seIsClosing] = useState(false);
+    const [isMountedInDom, setIsMountedInDom] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>(null);
     const mods: Record<string, boolean> = {
         [styles.opened]: isOpen, // анимация при открытие
@@ -53,6 +58,12 @@ export const Modal: FC<Props> = ({
 
     useEffect(() => {
         if (isOpen) {
+            setIsMountedInDom(true);
+        }
+    }, [isOpen]);
+
+    useEffect(() => {
+        if (isOpen) {
             window.addEventListener('keydown', onKeyDown);
         }
 
@@ -61,6 +72,10 @@ export const Modal: FC<Props> = ({
             window.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpen, onKeyDown]);
+
+    if (lazy && !isMountedInDom) {
+        return null;
+    }
 
     return (
         <Portal>

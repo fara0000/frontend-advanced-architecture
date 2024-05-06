@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-// import { Counter } from 'entities/Counter';
 
 const Main = () => {
     const { t } = useTranslation('main');
@@ -9,6 +8,11 @@ const Main = () => {
         <div>
             {t('MAIN_PAGE')}
             {/* <Counter /> */}
+            {/* <Input */}
+            {/*     value={value} */}
+            {/*     placeholder="введите текст" */}
+            {/*     onChange={onChange} */}
+            {/* /> */}
         </div>
     );
 };

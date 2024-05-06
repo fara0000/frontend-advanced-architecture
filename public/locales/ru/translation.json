@@ -4,5 +4,7 @@
   "LANGUAGE_SHORT": "RU",
   "MAIN": "Главная",
   "ABOUT": "О сайте",
-  "SIGN_IN": "Войти"
+  "SIGN_IN": "Войти",
+  "ENTER_USERNAME": "Введите имя пользователя: ",
+  "ENTER_PASSWORD": "Введите пароль: "
 }

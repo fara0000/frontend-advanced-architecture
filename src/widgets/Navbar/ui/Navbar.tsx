@@ -4,6 +4,7 @@ import { AppLink, AppLinkTheme, Button } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
 import { ButtonTheme } from 'shared/ui/Button/Button';
 import { Modal } from 'shared/ui/Modal/Modal';
+import { LoginModal } from 'features/AuthByUsername';
 import styles from './Navbar.module.scss';
 
 interface Props {
@@ -15,8 +16,12 @@ export const Navbar: FC<Props> = ({ className }) => {
     const [isAuthModal, setIsAuthModal] = useState(false);
 
     /** useCallback потому что передаем функцию в качестве пропса и ссылка меняется каждый раз */
-    const onToggleModal = useCallback(() => {
-        setIsAuthModal((prev) => !prev);
+    const onCloseModal = useCallback(() => {
+        setIsAuthModal(false);
+    }, []);
+
+    const onShowModal = useCallback(() => {
+        setIsAuthModal(true);
     }, []);
 
     return (
@@ -24,14 +29,11 @@ export const Navbar: FC<Props> = ({ className }) => {
             <Button
                 theme={ButtonTheme.CLEAR_INVERTED}
                 className={styles.links}
-                onClick={onToggleModal}
+                onClick={onShowModal}
             >
                 {t('SIGN_IN')}
             </Button>
-            <Modal isOpen={isAuthModal} onClose={onToggleModal}>
-                {/* eslint-disable-next-line */}
-                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.
-            </Modal>
+            <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
         </div>
     );
 };

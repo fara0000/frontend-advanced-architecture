@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { type ButtonHTMLAttributes, type FC } from 'react';
+import { ButtonHTMLAttributes, FC } from 'react';
 import styles from './Button.module.scss';
 
 export enum ButtonTheme {
@@ -17,6 +17,7 @@ export enum ButtonSize {
     XL = 'size_xl',
 }
 
+// Для того чтобы расширять текущую реализацию кнопки от нее наследуемся
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     theme?: ButtonTheme;

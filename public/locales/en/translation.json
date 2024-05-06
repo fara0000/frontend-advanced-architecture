@@ -4,5 +4,7 @@
   "LANGUAGE_SHORT": "EN",
   "MAIN": "Main page",
   "ABOUT": "About App",
-  "SIGN_IN": "Sign in"
+  "SIGN_IN": "Sign in",
+  "ENTER_USERNAME": "Enter your username: ",
+  "ENTER_PASSWORD": "Enter your password: "
 }
