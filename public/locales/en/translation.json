@@ -5,6 +5,9 @@
   "MAIN": "Main page",
   "ABOUT": "About App",
   "SIGN_IN": "Sign in",
+  "LOGOUT": "Logout",
   "ENTER_USERNAME": "Enter your username: ",
-  "ENTER_PASSWORD": "Enter your password: "
+  "ENTER_PASSWORD": "Enter your password: ",
+  "INCORRECT_LOGIN_DATA": "Provided password or login is incorrect",
+  "AUTHORIZATION_FORM": "Authorization form"
 }

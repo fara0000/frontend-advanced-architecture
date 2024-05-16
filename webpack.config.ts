@@ -1,4 +1,4 @@
-import webpack from 'webpack';
+import webpack, { DefinePlugin } from 'webpack';
 import path from 'path';
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
 import { BuildPaths, EnvConfig } from './config/types/config';
@@ -21,6 +21,11 @@ export default (env: EnvConfig) => {
         isDev,
         port: PORT,
     });
+
+    // для того чтобы __IS_DEV__ был видео в сторисах и в других местах
+    config.plugins.push(new DefinePlugin({
+        __IS_DEV__: true,
+    }));
 
     return config;
 };

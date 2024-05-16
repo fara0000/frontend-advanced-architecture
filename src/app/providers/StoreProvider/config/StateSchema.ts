@@ -1,5 +1,6 @@
 import { CounterSchema } from 'entities/Counter';
 import { UserSchema } from 'entities/User';
+import { LoginSchema } from 'features/AuthByUsername';
 
 /**
  Для описание стейта который принимает в себе Store из Redux
@@ -7,4 +8,5 @@ import { UserSchema } from 'entities/User';
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    loginForm: LoginSchema;
 }

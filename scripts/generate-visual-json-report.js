@@ -11,7 +11,7 @@ const expectedDir = joinPath(lokiDir, 'reference');
 const diffDir = joinPath(lokiDir, 'difference');
 
 /**
-    script for creating understandable differences of screenshots in HTML report
+    script for creating understandable differences of screenshots (loki) in HTML report
     save data into report.json
 */
 (async function main() {

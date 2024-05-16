@@ -5,6 +5,9 @@
   "MAIN": "Главная",
   "ABOUT": "О сайте",
   "SIGN_IN": "Войти",
+  "LOGOUT": "Выйти",
   "ENTER_USERNAME": "Введите имя пользователя: ",
-  "ENTER_PASSWORD": "Введите пароль: "
+  "ENTER_PASSWORD": "Введите пароль: ",
+  "INCORRECT_LOGIN_DATA": "Вы ввели неверный логин или пароль",
+  "AUTHORIZATION_FORM": "Форма авторизации"
 }
