@@ -1,8 +1,9 @@
-import React, { FC } from 'react';
+import React, { FC, Suspense } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Modal } from 'shared/ui/Modal/Modal';
+import { Loader } from 'shared/ui/Loader/Loader';
+import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 import styles from './LoginModal.module.scss';
-import { LoginForm } from '../LoginForm/LoginForm';
 
 interface Props {
     className?: string;
@@ -12,6 +13,8 @@ interface Props {
 
 export const LoginModal: FC<Props> = ({ className, isOpen, onClose }: Props) => (
     <Modal className={classNames(styles.LoginModal, {}, [className])} isOpen={isOpen} onClose={onClose}>
-        <LoginForm />
+        <Suspense fallback={<Loader />}>
+            <LoginFormAsync />
+        </Suspense>
     </Modal>
 );

@@ -1,3 +1,10 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 
-export const getLoginState = (state: StateSchema) => state?.loginForm;
+const defaultLoginFormValue = {
+    username: '',
+    password: '',
+    isLoading: false,
+    error: '',
+};
+
+export const getLoginState = (state: StateSchema) => state?.loginForm || defaultLoginFormValue;
