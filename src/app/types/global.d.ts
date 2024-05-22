@@ -13,3 +13,4 @@ declare module '*.svg' {
   export default SVG;
 }
 declare let __IS_DEV__: boolean;
+declare const __API__: string;

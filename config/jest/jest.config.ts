@@ -65,5 +65,6 @@ export default {
     // set of global variables that need to be available in all test environmet
     globals: {
         __IS_DEV__: true,
+        __API__: '',
     },
 };

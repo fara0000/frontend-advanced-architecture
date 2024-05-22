@@ -9,7 +9,7 @@ import { BuildOptions } from './types/config';
  *
  */
 
-export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins({ paths, isDev, apiUrl }: BuildOptions): webpack.WebpackPluginInstance[] {
     const plugins = [
         // js file into html
         new HTMLWebpackPlugin({
@@ -25,6 +25,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
         // DefinePlugin - for global variables
         new webpack.DefinePlugin({
             __IS_DEV__: isDev,
+            __API__: JSON.stringify(apiUrl),
         }),
     ];
 

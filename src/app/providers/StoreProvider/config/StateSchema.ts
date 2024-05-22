@@ -6,6 +6,8 @@ import {
 } from '@reduxjs/toolkit';
 import { createReduxStore } from 'app/providers/StoreProvider';
 import { ProfileSchema } from 'entities/Profile';
+import { AxiosInstance } from 'axios';
+import { NavigateOptions } from 'react-router';
 
 /**
  Для описание стейта который принимает в себе Store из Redux
@@ -20,7 +22,7 @@ export interface StateSchema {
 }
 
 /**
-  Ключи(название) всех наших редюсеров
+  Ключи (название) всех наших редюсеров
  */
 export type StateSchemaKey = keyof StateSchema;
 
@@ -45,3 +47,13 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
  Типизация метода dispatch
 */
 export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
+
+export interface ThunkExtraArg {
+    api: AxiosInstance;
+    navigate?: (to: string, options?: NavigateOptions) => void,
+}
+
+export interface ThunkConfig<T> {
+    rejectValue: T;
+    extra: ThunkExtraArg;
+}

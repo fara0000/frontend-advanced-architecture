@@ -8,6 +8,10 @@ module.exports = {
         'airbnb',
         'plugin:i18next/recommended',
     ],
+    globals: {
+        __IS_DEV__: true,
+        __API__: true,
+    },
     // Define overrides if you want to exclude specific files
     overrides: [
         {
