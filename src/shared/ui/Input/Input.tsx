@@ -1,5 +1,5 @@
 import React, {
-    FC, InputHTMLAttributes, memo, SyntheticEvent, useEffect, useRef, useState,
+    InputHTMLAttributes, memo, SyntheticEvent, useEffect, useRef, useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './Input.module.scss';
@@ -15,7 +15,7 @@ interface Props extends HTMLInputElementProps {
     autofocus?: boolean;
 }
 
-export const Input: FC<Props> = memo((props: Props) => {
+export const Input = memo((props: Props) => {
     const {
         className,
         value,
@@ -24,7 +24,7 @@ export const Input: FC<Props> = memo((props: Props) => {
         placeholder,
         autofocus,
         ...otherProps
-    } = props;
+    }: Props = props;
     const ref = useRef<HTMLInputElement>(null);
     const [isFocused, setIsFocused] = useState(false);
     const [caretPosition, setCaretPosition] = useState(0);

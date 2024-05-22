@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
-    AppLink, AppLinkTheme, Button, LangSwitcher, ThemeSwitcher,
+    Button, LangSwitcher, ThemeSwitcher,
 } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
-import AboutIcon from 'shared/assets/icons/about-20-20.svg';
-import MainIcon from 'shared/assets/icons/main-20-20.svg';
 import { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
-import { RoutePaths } from 'app/providers/Router/lib/routeConfig';
+import { SidebarItemsList } from 'widgets/Sidebar/model/items';
 import styles from './Sidebar.module.scss';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 interface Props {
   className?: string
@@ -21,6 +20,14 @@ export const Sidebar = ({ className }: Props) => {
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
+
+    const itemsList = useMemo(() => SidebarItemsList.map((item) => (
+        <SidebarItem
+            item={item}
+            collapsed={collapsed}
+            key={item.path}
+        />
+    )), [collapsed]);
 
     return (
         <div
@@ -38,26 +45,7 @@ export const Sidebar = ({ className }: Props) => {
                 {collapsed ? '>' : '<'}
             </Button>
             <div className={styles.items}>
-                <AppLink
-                    theme={AppLinkTheme.SECONDARY}
-                    to={RoutePaths.main}
-                    className={styles.item}
-                >
-                    <MainIcon className={styles.icon} />
-                    <span className={styles.link}>
-                        {t('MAIN')}
-                    </span>
-                </AppLink>
-                <AppLink
-                    theme={AppLinkTheme.SECONDARY}
-                    to={RoutePaths.about}
-                    className={styles.item}
-                >
-                    <AboutIcon className={styles.icon} />
-                    <span className={styles.link}>
-                        {t('ABOUT')}
-                    </span>
-                </AppLink>
+                {itemsList}
             </div>
             <div className={styles.switchers}>
                 <ThemeSwitcher />

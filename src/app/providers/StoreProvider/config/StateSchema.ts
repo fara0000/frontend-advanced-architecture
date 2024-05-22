@@ -4,6 +4,8 @@ import { LoginSchema } from 'features/AuthByUsername';
 import {
     AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
+import { createReduxStore } from 'app/providers/StoreProvider';
+import { ProfileSchema } from 'entities/Profile';
 
 /**
  Для описание стейта который принимает в себе Store из Redux
@@ -14,6 +16,7 @@ export interface StateSchema {
 
     /** Ассинхронные редюсервы */
     loginForm?: LoginSchema;
+    profile?: ProfileSchema;
 }
 
 /**
@@ -37,3 +40,8 @@ export interface ReducerManager {
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
     reducerManager: ReducerManager;
 }
+
+/**
+ Типизация метода dispatch
+*/
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

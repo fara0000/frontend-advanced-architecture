@@ -14,7 +14,7 @@ interface Props {
 export const LoginModal: FC<Props> = ({ className, isOpen, onClose }: Props) => (
     <Modal className={classNames(styles.LoginModal, {}, [className])} isOpen={isOpen} onClose={onClose}>
         <Suspense fallback={<Loader />}>
-            <LoginFormAsync />
+            <LoginFormAsync onSuccess={onClose} />
         </Suspense>
     </Modal>
 );
