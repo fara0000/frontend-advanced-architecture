@@ -8,7 +8,7 @@ import styles from './LoginModal.module.scss';
 interface Props {
     className?: string;
     isOpen?: boolean;
-    onClose?: () => void;
+    onClose: () => void;
 }
 
 export const LoginModal: FC<Props> = ({ className, isOpen, onClose }: Props) => (

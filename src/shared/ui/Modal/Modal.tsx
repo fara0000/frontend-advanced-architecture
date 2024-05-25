@@ -1,7 +1,7 @@
 import React, {
-    FC, ReactNode, useCallback, useEffect, useRef, useState,
+    FC, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
 import { useTheme } from 'app/providers/ThemeProvider';
 import styles from './Modal.module.scss';
@@ -10,7 +10,7 @@ interface Props {
     className?: string;
     children?: ReactNode;
     isOpen?: boolean;
-    onClose?: () => void;
+    onClose: () => void;
     // чтобы модалка монтировалась тогда когда мы ее открываем а не в самом начале как обычно
     // так же это поможет оптимизировать бандл то есть в банл моддалка попадет только тогда когда мы ее откроем
     lazy?: boolean;
@@ -27,8 +27,8 @@ export const Modal: FC<Props> = ({
 }) => {
     const [isClosing, seIsClosing] = useState(false);
     const [isMountedInDom, setIsMountedInDom] = useState(false);
-    const timerRef = useRef<ReturnType<typeof setTimeout>>(null);
-    const mods: Record<string, boolean> = {
+    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
+    const mods: Mods = {
         [styles.opened]: isOpen, // анимация при открытие
         [styles.isClosing]: isClosing, // анимация при закрытие
     };

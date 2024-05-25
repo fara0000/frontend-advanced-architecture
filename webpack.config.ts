@@ -1,5 +1,5 @@
 import webpack, { DefinePlugin } from 'webpack';
-import path from 'path';
+import * as path from 'path';
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
 import { BuildPaths, BuildEnv } from './config/build/types/config';
 
@@ -24,7 +24,7 @@ export default (env: BuildEnv) => {
     });
 
     // для того чтобы __IS_DEV__ был видео в сторисах и в других местах
-    config.plugins.push(new DefinePlugin({
+    config?.plugins?.push(new DefinePlugin({
         __IS_DEV__: true,
         __API__: JSON.stringify(apiUrl),
     }));

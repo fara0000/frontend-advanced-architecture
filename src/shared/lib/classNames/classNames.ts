@@ -1,4 +1,4 @@
-type Mods = Record<string, boolean | string>
+export type Mods = Record<string, boolean | string | undefined>
 
 /**
  * Функция для удобной работы и манипуляции нескоьких классов
@@ -11,7 +11,11 @@ type Mods = Record<string, boolean | string>
  * @returns string
  */
 
-export const classNames = (cls: string, mods: Mods = {}, additional: string[] = []): string => [
+export const classNames = (
+    cls: string,
+    mods: Mods = {},
+    additional: Array<string | undefined> = [],
+): string => [
     cls,
     ...Object.entries(mods)
         .filter(([_, value]) => Boolean(value))

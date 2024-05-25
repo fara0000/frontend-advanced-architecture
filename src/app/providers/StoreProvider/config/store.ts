@@ -1,8 +1,12 @@
-import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
+import {
+    Reducer,
+    CombinedState,
+    configureStore,
+    ReducersMapObject,
+} from '@reduxjs/toolkit';
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { $api } from 'shared/api/api';
-import { navigate } from '@storybook/addon-links';
 import { NavigateOptions } from 'react-router';
 import { StateSchema, ThunkExtraArg } from '../config/StateSchema';
 import { createReducerManager } from './reducerManager';
@@ -29,7 +33,7 @@ export function createReduxStore(
 
     const store = configureStore({
         // если тут не брать редюсеры из менеджера новые ассинхронные редюсеры не будут добавляться
-        reducer: reducerManager.reduce,
+        reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
         middleware: (getDefaultMiddleware) => getDefaultMiddleware({

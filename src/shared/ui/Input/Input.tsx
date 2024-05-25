@@ -33,7 +33,7 @@ export const Input = memo((props: Props) => {
         // чтобы сразу был фокус на инпуnе который задан autofocus
         if (autofocus) {
             setIsFocused(true);
-            ref.current.focus();
+            ref.current?.focus();
         }
     }, [autofocus]);
 
