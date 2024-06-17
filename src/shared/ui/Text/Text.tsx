@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import styles from './Text.module.scss';
 
@@ -8,11 +8,18 @@ export enum TextTheme {
     ERROR = 'error',
 }
 
+export enum TextAlign {
+    LEFT = 'left',
+    CENTER = 'center',
+    RIGHT = 'right',
+}
+
 interface Props {
     className?: string;
     title?: string;
     text?: string;
-    theme?: TextTheme
+    theme?: TextTheme;
+    align?: TextAlign;
 }
 
 /* TODO: Добавить семантику тегов (h1, p, span и ткд) */
@@ -21,11 +28,15 @@ export const Text: FC<Props> = ({
     text,
     title,
     theme = TextTheme.PRIMARY,
+    align = TextAlign.LEFT,
 }: Props) => {
-    const { t } = useTranslation();
+    const mods: Mods = {
+        [styles[theme]]: true,
+        [styles[align]]: true,
+    };
 
     return (
-        <div className={classNames(styles.Container, { [styles[theme]]: true }, [className])}>
+        <div className={classNames(styles.Container, mods, [className])}>
             {title && <p className={styles.title}>{title}</p>}
             {text && <p className={styles.text}>{text}</p>}
         </div>

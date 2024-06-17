@@ -9,5 +9,7 @@
   "ENTER_USERNAME": "Введите имя пользователя: ",
   "ENTER_PASSWORD": "Введите пароль: ",
   "INCORRECT_LOGIN_DATA": "Вы ввели неверный логин или пароль",
-  "AUTHORIZATION_FORM": "Форма авторизации"
+  "AUTHORIZATION_FORM": "Форма авторизации",
+  "SELECT_COUNTRY": "Выберите строну",
+  "SELECT_CURRENCY": "Выберите валюту"
 }

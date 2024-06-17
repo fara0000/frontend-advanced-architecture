@@ -9,5 +9,7 @@
   "ENTER_USERNAME": "Enter your username: ",
   "ENTER_PASSWORD": "Enter your password: ",
   "INCORRECT_LOGIN_DATA": "Provided password or login is incorrect",
-  "AUTHORIZATION_FORM": "Authorization form"
+  "AUTHORIZATION_FORM": "Authorization form",
+  "SELECT_COUNTRY": "Select country",
+  "SELECT_CURRENCY": "Select currency"
 }

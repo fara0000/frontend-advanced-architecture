@@ -2,5 +2,12 @@
   "PROFILE": "Profile",
   "EDIT": "Edit",
   "YOUR_SURNAME": "Your surname",
-  "YOUR_NAME": "Your name"
+  "YOUR_NAME": "Your name",
+  "REFRESH_PAGE": "Try to refresh the page",
+  "CANCEL": "Cancel",
+  "SAVE": "Save",
+  "YOUR_AGE": "Your age",
+  "CITY": "City",
+  "ENTER_YOUR_USERNAME": "Enter your username",
+  "ENTER_AVATAR_LINK": "Enter avatar link"
 }

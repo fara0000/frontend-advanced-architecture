@@ -26,6 +26,7 @@ export const Sidebar = ({ className }: Props) => {
             item={item}
             collapsed={collapsed}
             key={item.path}
+            authOnly={item.authOnly}
         />
     )), [collapsed]);
 

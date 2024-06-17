@@ -4,6 +4,7 @@ import { Input } from './Input/Input';
 import { Text, TextTheme } from './Text/Text';
 import { LangSwitcher } from './LangSwitcher/ui/LangSwitcher';
 import { ThemeSwitcher } from './ThemeSwitcher/ui/ThemeSwitcher';
+import { Avatar } from './Avatar/Avatar';
 import { AppLinkTheme } from './AppLink/types';
 
 export {
@@ -16,4 +17,5 @@ export {
     ButtonTheme,
     Input,
     Text,
+    Avatar,
 };

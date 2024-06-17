@@ -1,13 +1,29 @@
 {
   "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
   ],
   "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
   ],
-  "users" : [
+  "users": [
     {
       "id": "1",
       "username": "admin",
@@ -15,7 +31,7 @@
     }
   ],
   "profile": {
-    "first": "Fakhri",
+    "first": "Fakhri123",
     "lastname": "Imanzade",
     "age": 23,
     "currency": "RUB",
