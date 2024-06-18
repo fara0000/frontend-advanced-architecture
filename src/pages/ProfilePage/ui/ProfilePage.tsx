@@ -17,6 +17,11 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ProfilePageHeader } from 'pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader';
 import { Country } from 'entities/Country/model/types/country';
 import { Currency } from 'entities/Currency/model/types/currency';
+import {
+    getProfileValidateErrors,
+} from 'entities/Profile/model/selectors/getProfileValidateErrors/getProfileValidateErrors';
+import { ValidateProfileError } from 'entities/Profile/model/types/profile';
+import { TextTheme, Text } from 'shared/ui';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -27,10 +32,22 @@ interface Props {
 }
 
 const ProfilePage = ({ className }: Props) => {
+    const { t } = useTranslation('profile');
     const dispatch = useAppDispatch();
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
+    const validateErrors = useSelector(getProfileValidateErrors);
+
+    console.log(validateErrors, 'validate');
+
+    const validateErrorTranslates = {
+        [ValidateProfileError.SERVER_ERROR]: t('ERRORS.SERVER_ERROR'),
+        [ValidateProfileError.INCORRECT_COUNTRY]: t('ERRORS.INCORRECT_COUNTRY'),
+        [ValidateProfileError.NO_DATA]: t('ERRORS.NO_DATA'),
+        [ValidateProfileError.INCORRECT_USER_DATA]: t('ERRORS.INCORRECT_USER_DATA'),
+        [ValidateProfileError.INCORRECT_AGE]: t('ERRORS.INCORRECT_AGE'),
+    };
 
     useEffect(() => {
         dispatch(fetchProfileData());
@@ -74,6 +91,13 @@ const ProfilePage = ({ className }: Props) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
+                {validateErrors?.length && validateErrors.map((err) => (
+                    <Text
+                        key={err}
+                        theme={TextTheme.ERROR}
+                        text={validateErrorTranslates[err]}
+                    />
+                ))}
                 <ProfileCard
                     data={formData}
                     isLoading={isLoading}

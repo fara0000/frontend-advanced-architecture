@@ -9,5 +9,13 @@
   "YOUR_AGE": "Your age",
   "CITY": "City",
   "ENTER_YOUR_USERNAME": "Enter your username",
-  "ENTER_AVATAR_LINK": "Enter avatar link"
+  "ENTER_AVATAR_LINK": "Enter avatar link",
+
+  "ERRORS": {
+    "SERVER_ERROR": "Server error while saving",
+    "INCORRECT_COUNTRY":"Incorrect country",
+    "NO_DATA": "Data is not provided",
+    "INCORRECT_USER_DATA":"Firstname and lastname is required",
+    "INCORRECT_AGE": "Incorrect age"
+  }
 }

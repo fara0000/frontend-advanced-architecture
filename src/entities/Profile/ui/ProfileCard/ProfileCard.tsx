@@ -72,15 +72,6 @@ export const ProfileCard = ({
 
     return (
         <div className={classNames(cls.ProfileCard, mods, [className])}>
-            <div className={cls.header}>
-                <Text title={t('PROFILE')} />
-                <Button
-                    className={cls.editBtn}
-                    theme={ButtonTheme.OUTLINE}
-                >
-                    {t('EDIT')}
-                </Button>
-            </div>
             <div className={cls.data}>
                 {data?.avatar && (
                     <div className={cls.avatarWrapper}>
