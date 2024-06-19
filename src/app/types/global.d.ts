@@ -15,6 +15,7 @@ declare module '*.svg' {
 
 declare let __IS_DEV__: boolean;
 declare const __API__: string;
+declare const __PROJECT__: 'storybook' | 'frontend' | 'jest';
 
 // Для типизации частичных обьектов
 type DeepPartial<T> = T extends object ? {

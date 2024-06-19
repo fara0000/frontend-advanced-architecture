@@ -50,7 +50,9 @@ const ProfilePage = ({ className }: Props) => {
     };
 
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     const readonly = useSelector(getProfileReadonly);

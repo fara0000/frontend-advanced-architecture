@@ -21,13 +21,8 @@ export default (env: BuildEnv) => {
         isDev,
         port: PORT,
         apiUrl,
+        project: 'frontend',
     });
-
-    // для того чтобы __IS_DEV__ был видео в сторисах и в других местах
-    config?.plugins?.push(new DefinePlugin({
-        __IS_DEV__: true,
-        __API__: JSON.stringify(apiUrl),
-    }));
 
     return config;
 };
