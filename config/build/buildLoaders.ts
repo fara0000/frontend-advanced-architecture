@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
+import { buildBabelLoader } from './loaders/buildBabelLoader';
 
 /**
  * Файл содержит все Loader'ы проекта
@@ -8,13 +9,17 @@ import { BuildOptions } from './types/config';
  * !!! Важно: сохранять порядок лоудеров
  */
 
-export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
+    const { isDev } = options;
+
     // Если не испольуем тайпскрипт то нужен babel-loader
     const typescriptLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
     };
+
+    const babelLoader = buildBabelLoader(options);
 
     // Loader для стилей, !!! Порядок лоадеров в рамках стилей очень важен
     const cssLoader = {
@@ -59,6 +64,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     return [
         svgLoader,
         fileLoader,
+        babelLoader,
         typescriptLoader,
         cssLoader,
     ];
