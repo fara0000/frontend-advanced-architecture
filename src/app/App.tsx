@@ -3,11 +3,12 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppRouter } from 'app/providers/Router';
 import { Navbar, Sidebar } from 'widgets';
-import { userActions } from 'entities/User';
-import { useDispatch } from 'react-redux';
+import { getUserMounted, userActions } from 'entities/User';
+import { useDispatch, useSelector } from 'react-redux';
 
 const App = () => {
     const { theme } = useTheme();
+    const isMounted = useSelector(getUserMounted);
 
     const dispatch = useDispatch();
 
@@ -22,7 +23,7 @@ const App = () => {
                 <Navbar />
                 <div className="content-page">
                     <Sidebar />
-                    <AppRouter />
+                    {isMounted && <AppRouter />}
                 </div>
             </Suspense>
         </div>
