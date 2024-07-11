@@ -28,4 +28,11 @@ export const SidebarItemsList: SidebarItemType[] = [
         text: 'Профиль',
         authOnly: true,
     },
+    {
+        path: RoutePaths.articles,
+        // Todo: поменять на иконку статьи
+        Icon: ProfileIcon,
+        text: 'Статьи',
+        authOnly: true,
+    },
 ];
