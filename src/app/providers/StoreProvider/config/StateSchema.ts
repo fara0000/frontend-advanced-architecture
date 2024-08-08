@@ -8,6 +8,7 @@ import { createReduxStore } from 'app/providers/StoreProvider';
 import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions } from 'react-router';
+import { ArticleDetailsSchema } from 'entities/Article';
 
 /**
  Для описание стейта который принимает в себе Store из Redux
@@ -19,6 +20,7 @@ export interface StateSchema {
     /** Ассинхронные редюсервы */
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
+    articleDetails?: ArticleDetailsSchema;
 }
 
 /**

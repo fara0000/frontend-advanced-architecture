@@ -19,7 +19,8 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/,
     };
 
-    const babelLoader = buildBabelLoader(options);
+    // TODO: понять почему ломается сборка что ни так
+    // const babelLoader = buildBabelLoader(options);
 
     // Loader для стилей, !!! Порядок лоадеров в рамках стилей очень важен
     const cssLoader = {
@@ -64,7 +65,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     return [
         svgLoader,
         fileLoader,
-        babelLoader,
+        // babelLoader,
         typescriptLoader,
         cssLoader,
     ];

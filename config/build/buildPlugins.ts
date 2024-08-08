@@ -4,6 +4,8 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+
 /**
  * Файл содержит все Плагины'ы проекта
  *
@@ -30,6 +32,7 @@ export function buildPlugins({
             __API__: JSON.stringify(apiUrl),
             __PROJECT__: JSON.stringify(project),
         }),
+        new ReactRefreshWebpackPlugin(),
     ];
 
     // Будут только при dev сборке
