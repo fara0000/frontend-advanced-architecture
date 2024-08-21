@@ -11,5 +11,6 @@
   "INCORRECT_LOGIN_DATA": "Provided password or login is incorrect",
   "AUTHORIZATION_FORM": "Authorization form",
   "SELECT_COUNTRY": "Select country",
-  "SELECT_CURRENCY": "Select currency"
+  "SELECT_CURRENCY": "Select currency",
+  "COPY": "Copy"
 }

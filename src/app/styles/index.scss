@@ -25,4 +25,25 @@
     padding: 20px 20px 20px 45px;
     height: calc(100vh - var(--navbar-height));
     overflow-y: auto;
+    width: 100%;
+}
+
+.size_m {
+    .title {
+        font: var(--font-l);
+    }
+
+    .text {
+        font: var(--font-m);
+    }
+}
+
+.size_l {
+    .title {
+        font: var(--font-xl);
+    }
+
+    .text {
+        font: var(--font-l);
+    }
 }

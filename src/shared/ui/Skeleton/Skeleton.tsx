@@ -22,8 +22,6 @@ export const Skeleton: FC<Props> = memo(({
     };
 
     return (
-        <div className={classNames(styles.Skeleton, {}, [className])} style={inlineStyles}>
-            $
-        </div>
+        <div className={classNames(styles.Skeleton, {}, [className])} style={inlineStyles} />
     );
 });

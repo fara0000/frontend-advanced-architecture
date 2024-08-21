@@ -11,5 +11,6 @@
   "INCORRECT_LOGIN_DATA": "Вы ввели неверный логин или пароль",
   "AUTHORIZATION_FORM": "Форма авторизации",
   "SELECT_COUNTRY": "Выберите строну",
-  "SELECT_CURRENCY": "Выберите валюту"
+  "SELECT_CURRENCY": "Выберите валюту",
+  "COPY": "Копировать"
 }

@@ -9,7 +9,7 @@ import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
-import { Icon } from 'shared/ui/Icon/Icon';
+import { Icon } from 'shared/ui';
 import { ArticleCodeBlockComponent } from 'entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from 'entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
@@ -112,11 +112,11 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
                     size={TextSize.L}
                 />
                 <div className={cls.articleInfo}>
-                    <Icon className={cls.icon} Svg={EyeIcon} />
+                    <Icon className={cls.icon} SVG={EyeIcon} />
                     <Text text={String(article?.views)} />
                 </div>
                 <div className={cls.articleInfo}>
-                    <Icon className={cls.icon} Svg={CalendarIcon} />
+                    <Icon className={cls.icon} SVG={CalendarIcon} />
                     <Text text={article?.createdAt} />
                 </div>
                 {article?.blocks.map(renderBlock)}
