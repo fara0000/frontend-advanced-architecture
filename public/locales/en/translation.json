@@ -12,5 +12,6 @@
   "AUTHORIZATION_FORM": "Authorization form",
   "SELECT_COUNTRY": "Select country",
   "SELECT_CURRENCY": "Select currency",
-  "COPY": "Copy"
+  "COPY": "Copy",
+  "NO_COMMENTS": "No comments"
 }

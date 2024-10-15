@@ -1,6 +1,7 @@
 import React, { FC, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import { ArticleDetailsPage } from 'pages/ArticleDetailsPage';
 import styles from './ArticlesPage.module.scss';
 
 interface Props {

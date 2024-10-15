@@ -12,5 +12,6 @@
   "AUTHORIZATION_FORM": "Форма авторизации",
   "SELECT_COUNTRY": "Выберите строну",
   "SELECT_CURRENCY": "Выберите валюту",
-  "COPY": "Копировать"
+  "COPY": "Копировать",
+  "NO_COMMENTS": "Комментарии отсутсвуют"
 }

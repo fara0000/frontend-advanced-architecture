@@ -9,6 +9,7 @@ import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions } from 'react-router';
 import { ArticleDetailsSchema } from 'entities/Article';
+import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 
 /**
  Для описание стейта который принимает в себе Store из Redux
@@ -21,6 +22,7 @@ export interface StateSchema {
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
+    articleDetailsComments?: ArticleDetailsCommentsSchema;
 }
 
 /**
